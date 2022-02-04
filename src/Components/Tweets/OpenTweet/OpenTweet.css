@@ -6,6 +6,7 @@
     padding-top: 1rem;
     margin: 0 0 0 0;
 }
+
 .comment-container {
     max-width: 600px;
     width: 600px;
@@ -16,9 +17,18 @@
     margin: 0 0 0 0;
 }
 
+.reply-container {
+    max-width: 600px;
+    width: 600px;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    margin: 0 0 0 0;
+}
+
 .upper-section {
     padding-left: 1rem;
 }
+
 .col {
     width: 2rem;
     padding: 0;
@@ -31,6 +41,27 @@
 }
 .icon {
     margin: 1rem 0 1rem 7.5rem;
+}
+
+.profile-img-replay {
+    margin-top: 1rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 40px;
+    margin-right: 1.5rem;
+}
+
+.replay-button {
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 2rem;
+    width: 5rem;
+    background-color: #1DA1F2;
+    color: white;
+    border-radius: 90px;
+    border: none;
 }
 
 #icon_left {

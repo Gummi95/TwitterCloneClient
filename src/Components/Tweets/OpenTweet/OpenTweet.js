@@ -10,24 +10,18 @@ import LikeIcon from '@mui/icons-material/FavoriteBorder';
 import CommentIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import IosShareIcon from '@mui/icons-material/IosShare';
-import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
-import GifBoxOutlinedIcon from '@mui/icons-material/GifBoxOutlined';
-import PollOutlinedIcon from '@mui/icons-material/PollOutlined';
-import SentimentSatisfiedOutlinedIcon from '@mui/icons-material/SentimentSatisfiedOutlined';
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import {useMediaQuery} from "@mui/material";
 
 const OpenTweet = () => {
     const [tweet, setTweet] = useState([]);
     const [user, setUser] = useState([]);
-    const [commentUserId, setCommentUserId] = useState([]);
     const [quoteTweets, setQuoteTweets] = useState(0);
+    const [reply, setReply] = useState("")
     const [comment, setComment] = useState([]);
+    const [retweetCount, setRetweetCount] = useState(0)
 
     let url = 'https://localhost:7222/api/';
     let tweetsUrl = 'tweets/';
     let usersUrl = 'users/';
-    let commentUrl = 'comments'
     let {id} = useParams();
 
     const getUsers = async () => {
@@ -58,16 +52,14 @@ const OpenTweet = () => {
     }
 
     const getTweetByID = async (id) => {
-        let userList = []
         try {
             const response = await axios.get(url + tweetsUrl + id);
             setTweet(response.data);
             setComment(response.data.comments)
             for (let comments in comment) {
                 const answer = await axios.get(url + usersUrl + comment[comments].userId)
-                userList.push(answer.data)
+
             }
-            setCommentUserId(userList);
         } catch (e) {
             console.warn(e)
         }
@@ -110,6 +102,7 @@ const OpenTweet = () => {
                     comments: []
                 }
             })
+            setRetweetCount(retweetsCount);
         } catch (e) {
             console.warn(e)
         }
@@ -120,6 +113,41 @@ const OpenTweet = () => {
         let max = 369;
         let min = 3;
         setQuoteTweets(Math.floor(Math.random() * (max - min) + min));
+    }
+
+    const commentHandler = (event) => {
+        setReply(event.target.value)
+    }
+
+    const postComment = async (id) => {
+        console.log(id)
+        try {
+            const response = await axios({
+                method: 'put',
+                url: url + tweetsUrl + id,
+                data: {
+                    id: id,
+                    tweetContent: tweet.tweetContent,
+                    likes: tweet.likes,
+                    retweets: retweetCount,
+                    timestamp: tweet.timestamp,
+                    comments: [
+                        {
+                            content: reply,
+                            likes: 0,
+                            userId: id,
+                            timestamp: "0001-01-01T00:00:00",
+                        }
+                    ]
+                }
+            })
+            setReply("")
+            getTweetByID(id)
+        } catch (e) {
+            console.warn(e)
+
+        }
+
     }
 
     useEffect(() => {
@@ -142,7 +170,6 @@ const OpenTweet = () => {
                             </div>
                             <img src={Checkmark} alt="" className="checkmark"/>
                         </div>
-
                         <div className="flex-item">
                             <p className="tweet">{tweet.tweetContent}</p>
                         </div>
@@ -165,31 +192,36 @@ const OpenTweet = () => {
                             <LikeIcon className="icon" onClick={() => countLikes(tweet.id)}/>
                             <IosShareIcon className="icon"/>
                         </div>
+                        <hr className="dividers"/>
+                        <div className="flex-item">
+                            <img src={user.profileImgUrl} alt="profile-img" className="profile-img-replay"/>
+                            <input type="text" className="tweet-input" placeholder="Tweet your reply?"
+                                   onChange={commentHandler}/>
+                            <button className="replay-button" onClick={postComment}>Reply</button>
+                        </div>
                     </div>
                     {comment.map(comments => (
                         <div>
-
-                                <div className="comment-container">
-                                    <div className="flex-item">
-                                        <img src={user.profileImgUrl} alt="" className="profile-img"/>
-                                        <div className="col">
-                                            <p className="username" id="open-tweet-username">{user.userName}</p>
-                                            <p className="handle" id="open-tweet-handle">{user.handle}</p>
-                                        </div>
-                                        <img src={Checkmark} alt="" className="checkmark"/>
+                            <div className="comment-container">
+                                <div className="flex-item">
+                                    <img src={user.profileImgUrl} alt="" className="profile-img"/>
+                                    <div className="col">
+                                        <p className="username" id="open-tweet-username">{user.userName}</p>
+                                        <p className="handle" id="open-tweet-handle">{user.handle}</p>
                                     </div>
-                                    <p className="tweet">{comments.content}</p>
-                                    <div className="flex-item">
-                                        <p className="timestamp">{comments.timestamp}</p>
-                                    </div>
-                                    <div className="flex-item">
-                                        <CommentIcon id="icon_left" className="icon"/>
-                                        <AutorenewIcon className="icon"/>
-                                        <LikeIcon className="icon"/>
-                                        <IosShareIcon className="icon"/>
-                                    </div>
+                                    <img src={Checkmark} alt="" className="checkmark"/>
                                 </div>
-
+                                <p className="tweet">{comments.content}</p>
+                                <div className="flex-item">
+                                    <p className="timestamp">{comments.timestamp}</p>
+                                </div>
+                                <div className="flex-item">
+                                    <CommentIcon id="icon_left" className="icon"/>
+                                    <AutorenewIcon className="icon"/>
+                                    <LikeIcon className="icon"/>
+                                    <IosShareIcon className="icon"/>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

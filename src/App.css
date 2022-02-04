@@ -67,3 +67,15 @@ body {
 .username {
   margin-top: 0;
 }
+
+
+.tweet-input {
+  padding-left: 0;
+  width: 80%;
+  height: 5rem;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
