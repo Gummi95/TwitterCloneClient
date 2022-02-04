@@ -3,7 +3,7 @@ import Login from "./Components/LoginPage/Login";
 import OpenTweet from './Components/Tweets/OpenTweet/OpenTweet'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./Components/Home/Home";
-import Register from "./Register/Register";
+import Register from "./Components/Register/Register";
 
 
 function App() {

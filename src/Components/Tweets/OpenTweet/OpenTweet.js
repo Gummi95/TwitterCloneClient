@@ -171,7 +171,7 @@ const OpenTweet = () => {
                     </div>
                     {comment.map(comments => (
                         <div>
-                            {commentUserId.map(user => (
+
                                 <div className="comment-container">
                                     <div className="flex-item">
                                         <img src={user.profileImgUrl} alt="" className="profile-img"/>
@@ -192,7 +192,7 @@ const OpenTweet = () => {
                                         <IosShareIcon className="icon"/>
                                     </div>
                                 </div>
-                            ))}
+
                         </div>
                     ))}
                 </div>

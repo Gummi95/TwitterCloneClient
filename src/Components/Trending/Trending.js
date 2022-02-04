@@ -9,6 +9,7 @@ const Trending = () => {
     const [userA, setUserA] = useState([]);
     const [userB, setUserB] = useState([]);
 
+    //users to display in the "who to follow section"
     const getUserA = async () => {
         const response = await axios.get("https://localhost:7222/api/users/2");
         setUserA(response.data);
@@ -17,6 +18,7 @@ const Trending = () => {
         const response = await axios.get("https://localhost:7222/api/users/3");
         setUserB(response.data);
     };
+
     useEffect(() => {
         getUserA();
         getUserB();

@@ -2,7 +2,7 @@
 const Register = () => {
 
     return(
-        <div>wanabe regester screen</div>
+        <div>There is no registration screen :)</div>
     )
 }
 

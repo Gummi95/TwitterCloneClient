@@ -8,7 +8,6 @@ const Login = () => {
 
     return(
         <div className="container">
-            <div className="col">
                 <div className="login-row">
                     <img src={hero} className="hero-img" alt="coverphoto"/>
                     <div className="login-right">
@@ -20,7 +19,6 @@ const Login = () => {
                         <Link className="sign-up-link" to="/register">Sign up</Link>
                     </div>
                 </div>
-            </div>
         </div>
     )
 }
