@@ -1,0 +1,58 @@
+.open-tweet-container {
+    max-width: 600px;
+    width: 600px;
+    border: 1px solid #F5F8FA;
+    height: fit-content;
+    padding-top: 1rem;
+    margin: 0 0 0 0;
+}
+.comment-container {
+    max-width: 600px;
+    width: 600px;
+    border-top: 1px solid #F5F8FA;
+    height: fit-content;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    margin: 0 0 0 0;
+}
+
+.upper-section {
+    padding-left: 1rem;
+}
+.col {
+    width: 2rem;
+    padding: 0;
+    margin-right: 2.5rem;
+}
+
+.dividers {
+    border: 1px solid #F5F8FA;
+    margin: 0 1rem 0 1rem;
+}
+.icon {
+    margin: 1rem 0 1rem 7.5rem;
+}
+
+#icon_left {
+    margin-left: 4rem;
+}
+
+.count {
+    font-weight: bold;
+    margin-right: 0.4rem;
+}
+#count-right {
+    margin-left: 2rem;
+}
+
+.text {
+    font-weight: lighter;
+    margin-right: 1rem;
+}
+
+#open-tweet-username {
+    margin-bottom: 0;
+}
+#open-tweet-handle {
+    margin-top: 0;
+}

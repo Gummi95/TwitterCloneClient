@@ -1,0 +1,65 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-size: 1.3rem;
+}
+.App {
+  text-align: center;
+  color: black;
+  background: #ffffff;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+.tweet-container {
+  max-width: 600px;
+  width: 600px;
+  border: 1px solid #F5F8FA;
+  height: fit-content;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  margin: 0 0 0 0;
+}
+
+.tweet-container:hover {
+  background-color: #F5F8FA;
+}
+
+.flex-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 40px;
+  margin-right: 1.5rem;
+
+}
+
+.checkmark {
+  margin-top: 0rem;
+  margin-right: 1rem;
+  height: 1.5rem;
+}
+
+.timestamp {
+  font-weight: lighter;
+  margin-top: 0;
+}
+
+.handle {
+  margin-top: 0;
+  font-weight: lighter;
+}
+
+.username {
+  margin-top: 0;
+}

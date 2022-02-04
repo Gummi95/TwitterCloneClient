@@ -1,0 +1,28 @@
+
+.tweet {
+    text-align: left;
+}
+
+.like-counter {
+    margin-top: 0;
+    margin-left: 0.5rem;
+}
+
+.comment-counter {
+    margin-top: 0;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+}
+
+.icons {
+    margin-top: 0.2rem;
+    margin-left: 5rem;
+    border-radius: 90px;
+
+}
+
+@media (max-width: 500px) {
+    .container{
+        width: 100%;
+    }
+}

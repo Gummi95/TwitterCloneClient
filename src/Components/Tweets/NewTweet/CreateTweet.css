@@ -1,0 +1,81 @@
+
+.create-tweet-container {
+    margin: 0 auto;
+    max-width: 600px;
+    width: 600px;
+    border: 1px solid #F5F8FA;
+    height: fit-content;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+.profile-img-container {
+    height: 100%;
+}
+
+.title{
+    margin-top: 0;
+}
+
+.tweet-input {
+    padding-left: 0;
+    width: 80%;
+    height: 5rem;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.dummy-text{
+    margin-top: 0;
+    color: #1DA1F2;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.globe-icon{
+    margin-left: 3.5rem;
+    margin-right: 0.5rem;
+}
+
+.divider {
+    width: 85%;
+    border: 1px solid #F5F8FA;
+}
+
+.icon-left {
+    margin-top: 0.5rem;
+    margin-left: 3.5rem;
+    margin-right: 1rem;
+}
+
+.icon-middle {
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+}
+
+.icon-right {
+    margin-top: 0.5rem;
+    margin-right: 11rem;
+
+}
+
+.create-tweet {
+    height: 2.5rem;
+    width: 5rem;
+    border-radius: 90px;
+    color: white;
+    border: none;
+    font-weight: bolder;
+    font-size: 1rem;
+    background-color: #1DA1F2;
+    margin-bottom: 0.5rem;
+
+}
+
+#tweetId::placeholder {
+    padding-left: 0;
+    font-size: 1.5rem;
+    text-align: left;
+}
