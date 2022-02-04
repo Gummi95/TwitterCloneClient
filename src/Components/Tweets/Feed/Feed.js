@@ -88,7 +88,6 @@ const TweetFeed = () => {
             let numb = 0;
             for (let usersKey in answer.data) {
                 for (let tweetedKey in answer.data[usersKey]) {
-                    console.log("anwe",answer.data[usersKey].comments[tweetedKey])
                     setCommentCount(numb + 1)
                 }
             }

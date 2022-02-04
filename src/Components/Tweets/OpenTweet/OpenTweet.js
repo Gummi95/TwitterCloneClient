@@ -63,14 +63,11 @@ const OpenTweet = () => {
             const response = await axios.get(url + tweetsUrl + id);
             setTweet(response.data);
             setComment(response.data.comments)
-            console.log("before loop")
             for (let comments in comment) {
                 const answer = await axios.get(url + usersUrl + comment[comments].userId)
                 userList.push(answer.data)
-                console.log("userlist", userList)
             }
             setCommentUserId(userList);
-            console.log("commentUserId", commentUserId)
         } catch (e) {
             console.warn(e)
         }
