@@ -39,6 +39,7 @@
     border: 1px solid #F5F8FA;
     margin: 0 1rem 0 1rem;
 }
+
 .icon {
     margin: 1rem 0 1rem 7.5rem;
 }
@@ -72,6 +73,7 @@
     font-weight: bold;
     margin-right: 0.4rem;
 }
+
 #count-right {
     margin-left: 2rem;
 }
@@ -84,6 +86,7 @@
 #open-tweet-username {
     margin-bottom: 0;
 }
+
 #open-tweet-handle {
     margin-top: 0;
 }

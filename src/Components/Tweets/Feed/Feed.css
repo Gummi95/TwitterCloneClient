@@ -42,18 +42,18 @@
     height: 100%;
 }
 
-.title{
+.title {
     margin-top: 0;
 }
 
-.dummy-text{
+.dummy-text {
     margin-top: 0;
     color: #1DA1F2;
     font-size: 1rem;
     font-weight: bold;
 }
 
-.globe-icon{
+.globe-icon {
     margin-left: 3.5rem;
     margin-right: 0.5rem;
 }
@@ -88,7 +88,7 @@
 }
 
 @media (max-width: 500px) {
-    .container{
+    .container {
         width: 100%;
     }
 }

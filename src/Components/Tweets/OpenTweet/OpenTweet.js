@@ -12,17 +12,21 @@ import AutorenewIcon from '@mui/icons-material/Autorenew';
 import IosShareIcon from '@mui/icons-material/IosShare';
 
 const OpenTweet = () => {
+
     const [tweet, setTweet] = useState([]);
     const [user, setUser] = useState([]);
+    const [userId, setUserId] = useState(0);
     const [quoteTweets, setQuoteTweets] = useState(0);
-    const [reply, setReply] = useState("")
+    const [reply, setReply] = useState("");
     const [comment, setComment] = useState([]);
-    const [retweetCount, setRetweetCount] = useState(0)
+    const [retweetCount, setRetweetCount] = useState(0);
+
 
     let url = 'https://localhost:7222/api/';
     let tweetsUrl = 'tweets/';
     let usersUrl = 'users/';
     let {id} = useParams();
+
 
     const getUsers = async () => {
         try {
@@ -32,6 +36,7 @@ const OpenTweet = () => {
                 for (let index in temp[users].tweets) {
                     let numb = temp[users].tweets[index].id;
                     if (numb == id) {
+                        setUserId(temp[users].id)
                         getUserById(temp[users].id);
                     }
                 }
@@ -57,6 +62,7 @@ const OpenTweet = () => {
             setTweet(response.data);
             setComment(response.data.comments)
             for (let comments in comment) {
+                set
                 const answer = await axios.get(url + usersUrl + comment[comments].userId)
 
             }
@@ -135,7 +141,7 @@ const OpenTweet = () => {
                         {
                             content: reply,
                             likes: 0,
-                            userId: id,
+                            userId: userId,
                             timestamp: "0001-01-01T00:00:00",
                         }
                     ]
@@ -224,6 +230,7 @@ const OpenTweet = () => {
                             </div>
                         </div>
                     ))}
+
                 </div>
                 <div className="flex-item">
                     <Trending/>

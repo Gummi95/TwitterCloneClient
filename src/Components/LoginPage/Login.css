@@ -4,16 +4,17 @@
 }
 
 .hero-img {
-    float: left;
     width: 55%;
     height: 930px;
     margin-right: 3%;
     max-width: 1000px;
 }
+
 .logo-img {
     height: 4rem;
     width: 4rem;
 }
+
 .login-row {
     display: flex;
     flex-direction: row
@@ -77,6 +78,7 @@
         flex-direction: column;
         margin: 0 auto;
     }
+
     .hero-img {
         float: bottom;
         width: 100%;
