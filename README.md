@@ -1,6 +1,6 @@
 # TwitterCloneClient
 This is the frontend for a Twitter clone that I created for a school project.
-The goal was to emulate Twitter the best I could and feed data to it from an APi I made.
+The goal was to emulate Twitter the best I could and feed data to it from an API I made.
 The project is written in React JS and CSS.
 
 ## Setup
