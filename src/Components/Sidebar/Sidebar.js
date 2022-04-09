@@ -10,7 +10,9 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ListAltOutlinedIcon from '@mui/icons-material/ListAltOutlined';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import {useNavigate} from "react-router-dom";
 
+let navigate = useNavigate();
 
 const Sidebar = () => {
     return (
@@ -18,7 +20,7 @@ const Sidebar = () => {
             <div className="sidebar-row">
                 <img className="logo" src={TwitterLogo} alt="dummyHome"/>
             </div>
-            <div className="sidebar-row">
+            <div className="sidebar-row" onClick={() => navigate('/home')}>
                 <HomeIcon fontSize="large"/>
                 <p>Home</p>
             </div>

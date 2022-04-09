@@ -9,7 +9,7 @@ const Login = () => {
     return (
         <div className="container">
             <div className="login-row">
-                <img src={hero} className="hero-img" alt="coverphoto"/>
+            <img src={hero} className="hero-img-fullscreen" alt="coverphoto"/>
                 <div className="login-right">
                     <img src={tweeter} alt="logo" className="logo-img"/>
                     <h2>Happening now</h2>
@@ -18,6 +18,7 @@ const Login = () => {
                     <p>or</p>
                     <Link className="sign-up-link" to="/register">Sign up</Link>
                 </div>
+                <img src={hero} className="hero-img" alt="coverphoto"/>
             </div>
         </div>
     )

@@ -25,6 +25,7 @@ const OpenTweet = () => {
     let url = 'https://localhost:7222/api/';
     let tweetsUrl = 'tweets/';
     let usersUrl = 'users/';
+    // the id of the tweet that was clicked
     let {id} = useParams();
 
 
@@ -125,8 +126,8 @@ const OpenTweet = () => {
         setReply(event.target.value)
     }
 
-    const postComment = async (id) => {
-        console.log(id)
+    const postComment = async (id, e) => {
+        e.preventDefault()
         try {
             const response = await axios({
                 method: 'put',
@@ -200,10 +201,12 @@ const OpenTweet = () => {
                         </div>
                         <hr className="dividers"/>
                         <div className="flex-item">
-                            <img src={user.profileImgUrl} alt="profile-img" className="profile-img-replay"/>
-                            <input type="text" className="tweet-input" placeholder="Tweet your reply?"
-                                   onChange={commentHandler}/>
-                            <button className="replay-button" onClick={postComment}>Reply</button>
+                            <form onSubmit={postComment}>
+                                <img src={user.profileImgUrl} alt="profile-img" className="profile-img-replay"/>
+                                <input type="text" className="comment-input" placeholder="Tweet your reply?"
+                                    onChange={commentHandler}/>
+                                <button className="replay-button" onClick={postComment}>Reply</button>
+                            </form>
                         </div>
                     </div>
                     {comment.map(comments => (
